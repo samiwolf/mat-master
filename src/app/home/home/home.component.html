@@ -39,6 +39,31 @@
 <!--  </mat-card-actions>-->
 <!--</mat-card>-->
 
+
+<form [formGroup]="form">
+  <ng-container formArrayName="contacts" *ngFor="let contact of contacts.controls; index as i">
+    <ng-container [formGroupName]="i">
+      <mat-form-field>
+        <mat-label>Input</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Input</mat-label>
+        <input matInput formControlName="description">
+      </mat-form-field>
+    </ng-container>
+    <br>
+  </ng-container>
+  <button type="button" mat-button (click)="addContact()">Add</button>
+</form>
+<form [formGroup]="form">
+  <ng-container formArrayName="contacts" *ngFor="let c of contacts.controls; index as i">
+    <ng-container [formGroupName]="i">
+    </ng-container>
+  </ng-container>
+</form>
+
 <mat-card class="product-card">
   <img mat-card-image src="https://placehold.co/200x200" height="200" width="200" alt="Product Image">
   <mat-card-content>
