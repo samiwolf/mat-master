@@ -1,6 +1,7 @@
 # Mat
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.5.
+Please use node js 18.17.0 and npm 9.6.7
 
 ## Development server
 
