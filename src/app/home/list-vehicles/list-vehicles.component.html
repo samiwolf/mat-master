@@ -1,7 +1,7 @@
 <div fxLayout="row" fxLayoutAlign="space-around start" class="margin-top-16">
   <div><h1>Vehicle List</h1></div>
 </div>
-<div *ngIf="!editing" class="centered">
+<div *ngIf="!editing">
 <table mat-table *ngIf="vehiclesList.length > 0" [dataSource]="vehiclesList" class="mat-elevation-z8">
 
   <!--- Note that these columns can be defined in any order.
@@ -22,13 +22,13 @@
     <th mat-header-cell *matHeaderCellDef> License Number </th>
     <td mat-cell *matCellDef="let element"> {{element._licenseNumber}} </td>
   </ng-container>
-  <ng-container matColumnDef="_entryDate">
-    <th mat-header-cell *matHeaderCellDef> Entry Date </th>
-    <td mat-cell *matCellDef="let element"> {{element._entryDate | date}} </td>
+  <ng-container matColumnDef="_entryTime">
+    <th mat-header-cell *matHeaderCellDef> Entry Time </th>
+    <td mat-cell *matCellDef="let element"> {{element._entryTime }} </td>
   </ng-container>
-  <ng-container matColumnDef="_exitDate">
-    <th mat-header-cell *matHeaderCellDef> Exit Date </th>
-    <td mat-cell *matCellDef="let element"> {{element._exitDate | date}} </td>
+  <ng-container matColumnDef="_exitTime">
+    <th mat-header-cell *matHeaderCellDef> Exit Time </th>
+    <td mat-cell *matCellDef="let element"> {{element._exitTime }} </td>
   </ng-container>
   <ng-container matColumnDef="_entryStatus">
     <th mat-header-cell *matHeaderCellDef> Entry Status </th>
@@ -45,7 +45,7 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-  <div  *ngIf="vehiclesList.length === 0">
+  <div  *ngIf="vehiclesList.length === 0"  class="centered">
     <h2>No vehicle info</h2>
   </div>
 

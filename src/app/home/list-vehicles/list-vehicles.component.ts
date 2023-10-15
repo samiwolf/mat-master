@@ -10,7 +10,7 @@ import {VehicleDataService} from "../../services/vehicle-data.service";
 })
 export class ListVehiclesComponent {
   vehiclesList: any[] = [];
-  displayedColumns: string[] = ['_ownerName', '_vehicleType', '_licenseNumber', '_entryDate', '_exitDate', '_entryStatus', 'actions'];
+  displayedColumns: string[] = ['_ownerName', '_vehicleType', '_licenseNumber', '_entryTime', '_exitTime', '_entryStatus', 'actions'];
   editing = false;
   editingData = null;
   constructor(private router: Router,
