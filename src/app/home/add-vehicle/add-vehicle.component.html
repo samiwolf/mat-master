@@ -73,7 +73,6 @@
           <mat-hint>Exit Date - Format(MM/DD/YYYY)</mat-hint>
           <mat-datepicker-toggle matIconSuffix [for]="pickerExit"></mat-datepicker-toggle>
           <mat-datepicker #pickerExit></mat-datepicker>
-          <mat-error *ngIf="vehicleForm.get('exitDate').errors?.['required']">Field is required</mat-error>
         </mat-form-field>
       </div>
 
@@ -82,7 +81,6 @@
           <input matInput [ngxTimepicker]="exittimepicker" placeholder="Exit Time" formControlName="exitTime" >
           <mat-hint>Exit Time - HH:MM</mat-hint>
           <ngx-material-timepicker #exittimepicker></ngx-material-timepicker>
-          <mat-error *ngIf="vehicleForm.get('exitTime').errors?.['required']">Field is required</mat-error>
 
         </mat-form-field>
       </div>
@@ -90,7 +88,6 @@
         <mat-form-field appearance="outline" >
           <input matInput placeholder="Parking Charge" formControlName="parkingCharge" >
           <mat-label>Parking Charge</mat-label>
-          <mat-error *ngIf="vehicleForm.get('parkingCharge').errors?.['required']">Field is required</mat-error>
         </mat-form-field>
       </div>
       <div *ngIf="editData">

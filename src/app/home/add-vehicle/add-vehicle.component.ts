@@ -56,10 +56,10 @@ export class AddVehicleComponent implements OnInit{
           ownerPhone: new FormControl('',[Validators.required, Validators.minLength(11), Validators.maxLength(11)]),
           entryStatus: new FormControl('',[Validators.required]),
           entryDate: new FormControl('',[Validators.required]),
-          exitDate: new FormControl('',[Validators.required]),
+          exitDate: new FormControl('',),
           entryTime: new FormControl('',[Validators.required]),
-          exitTime: new FormControl('',[Validators.required]),
-          parkingCharge: new FormControl('',[Validators.required]),
+          exitTime: new FormControl('',),
+          parkingCharge: new FormControl('',),
         }
       );
     }
