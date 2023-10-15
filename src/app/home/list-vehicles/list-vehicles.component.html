@@ -1,3 +1,6 @@
+<div fxLayout="row" fxLayoutAlign="space-around start" class="margin-top-16">
+  <div><h1>Vehicle List</h1></div>
+</div>
 <div *ngIf="!editing" class="centered">
 <table mat-table *ngIf="vehiclesList.length > 0" [dataSource]="vehiclesList" class="mat-elevation-z8">
 
