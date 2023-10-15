@@ -30,7 +30,7 @@ export class ChartsService {
     {
       return Array.from({length: 30}, (_, i) => i + 1)
     }
-    return Array.from({length: 5}, (_, i) => i + 2020)
+    return ["Sunday", "Monday", "Tuesday", "Wednesday","Thursday", "Friday","Saturday"];
 
   }
 
@@ -52,7 +52,7 @@ export class ChartsService {
       dataPoints = Array.from({length: 30}, () => Math.floor(Math.random() * 40));
     }
     else{
-        dataPoints = Array.from({length: 5}, () => Math.floor(Math.random() * 40 * 30 * 365))
+        dataPoints = Array.from({length: 7}, () => Math.floor(Math.random() * 40 * 7))
     }
     return [
       {

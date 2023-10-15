@@ -29,8 +29,8 @@ export class DashboardComponent {
   };
 
   public lineChartDataYearly: ChartConfiguration<'line'>['data'] = {
-    labels: this.chartsService.generateLineChartLabels('y'),
-    datasets: this.chartsService.generateLineChartDataset('y'),
+    labels: this.chartsService.generateLineChartLabels('w'),
+    datasets: this.chartsService.generateLineChartDataset('w'),
   };
 
   public lineChartOptions: ChartOptions<'line'> = {
@@ -63,6 +63,7 @@ export class DashboardComponent {
   dashboardForm : any;
 
   filter() {
+    // randomize data
     this.dataSource = this.chartsService.generateParkingData();
     this.totalParked = this.dataSource.reduce((sum,item) => sum + item.count, 0);
     this.pieChartDatasets = this.chartsService.generatePieChartDataset();

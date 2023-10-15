@@ -89,6 +89,16 @@
       </canvas>
     </div>
     </mat-tab>
+    <mat-tab label="Weekly">
+      <div style="display: block;">
+        <canvas baseChart width="400" height="400"
+                [type]="'line'"
+                [data]="lineChartDataYearly"
+                [options]="lineChartOptions"
+                [legend]="lineChartLegend">
+        </canvas>
+      </div>
+    </mat-tab>
     <mat-tab label="Monthly">
       <div style="display: block;">
         <canvas baseChart width="400" height="400"
@@ -99,16 +109,7 @@
         </canvas>
       </div>
     </mat-tab>
-    <mat-tab label="Yearly">
-      <div style="display: block;">
-        <canvas baseChart width="400" height="400"
-                [type]="'line'"
-                [data]="lineChartDataYearly"
-                [options]="lineChartOptions"
-                [legend]="lineChartLegend">
-        </canvas>
-      </div>
-    </mat-tab>
+
   </mat-tab-group>
 
 
