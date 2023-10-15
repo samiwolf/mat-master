@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 const { v4: uuidv4 } = require('uuid');
-
+import { getDatabase, ref, set } from "firebase/database";
 class Vehicle {
   get id(): string {
     return this._id;
@@ -104,6 +104,7 @@ class Vehicle {
 export class VehicleDataService {
 
   vehicles: any[] = [];
+  database = getDatabase();
 
   constructor() { }
 
@@ -139,7 +140,6 @@ export class VehicleDataService {
   }
 
   listAll() {
-    console.log(this.vehicles);
     let lsValue = localStorage.getItem('vehicles');
     if(lsValue){
       this.vehicles = JSON.parse(lsValue) ;

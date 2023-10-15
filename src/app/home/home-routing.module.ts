@@ -6,6 +6,7 @@ import {ListVehiclesComponent} from "./list-vehicles/list-vehicles.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 
 const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'add', component: AddVehicleComponent },
   { path: 'list', component: ListVehiclesComponent },

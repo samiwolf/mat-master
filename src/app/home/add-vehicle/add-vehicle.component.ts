@@ -20,6 +20,10 @@ export class AddVehicleComponent implements OnInit{
 
   }
 
+  ngOnInit(): void {
+    this.initForm();
+  }
+
 
   addOrUpdate() {
     // console.log('this.vehicleForm.value',this.vehicleForm.value);
@@ -30,26 +34,27 @@ export class AddVehicleComponent implements OnInit{
     }
     else{
       this.vehicleDataService.add(this.vehicleForm.value);
+      this.initForm();
+      this.router.navigate(['/list']);
     }
-
-    this.vehicleDataService.listAll();
+    // this.vehicleDataService.listAll();
   }
 
-  ngOnInit(): void {
-    console.log(this.editData);
+  initForm()
+  {
     if(!this.editData)
     {
       this.vehicleForm = new FormGroup(
         {
-          licenseNumber: new FormControl('',),
-          vehicleType: new FormControl('',),
-          ownerName: new FormControl('',),
-          ownerPhone: new FormControl('',),
-          entryStatus: new FormControl('',),
-          entryDate: new FormControl('',),
-          exitDate: new FormControl('',),
-          entryTime: new FormControl('',),
-          exitTime: new FormControl('',),
+          licenseNumber: new FormControl('', [Validators.required]),
+          vehicleType: new FormControl('',[Validators.required]),
+          ownerName: new FormControl('',[Validators.required]),
+          ownerPhone: new FormControl('',[Validators.required]),
+          entryStatus: new FormControl('',[Validators.required]),
+          entryDate: new FormControl('',[Validators.required]),
+          exitDate: new FormControl('',[Validators.required]),
+          entryTime: new FormControl('',[Validators.required]),
+          exitTime: new FormControl('',[Validators.required]),
         }
       );
     }
@@ -69,4 +74,6 @@ export class AddVehicleComponent implements OnInit{
       );
     }
   }
+
+
 }
