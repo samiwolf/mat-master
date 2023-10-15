@@ -3,13 +3,13 @@
   <div>
     <form (ngSubmit)="addOrUpdate()" name="loginForm" [formGroup]="vehicleForm">
       <div>
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" class="half-width">
           <mat-label>License Number</mat-label>
           <input matInput placeholder="Vehicle License Number" formControlName="licenseNumber" >
         </mat-form-field>
       </div>
       <div>
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" class="half-width">
           <mat-label>Vehicle Type</mat-label>
           <mat-select  formControlName="vehicleType">
             <mat-option value="micro">Microbus</mat-option>
@@ -20,19 +20,19 @@
         </mat-form-field>
       </div>
       <div>
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" class="half-width">
           <input matInput placeholder="Owner Name" formControlName="ownerName" >
           <mat-label>Owner Name</mat-label>
         </mat-form-field>
       </div>
       <div>
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" class="half-width">
           <input matInput placeholder="Owner Phone" formControlName="ownerPhone" >
           <mat-label>Phone Number</mat-label>
         </mat-form-field>
       </div>
       <div>
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" class="half-width">
           <mat-label>Vehicle Status</mat-label>
           <mat-select  formControlName="entryStatus">
             <mat-option value="in">In</mat-option>
@@ -43,7 +43,7 @@
       </div>
 
       <div>
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" class="half-width">
           <input matInput [matDatepicker]="picker" placeholder="Entry Date" formControlName="entryDate" >
           <mat-hint>Entry Date - Format(MM/DD/YYYY)</mat-hint>
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
@@ -53,7 +53,7 @@
       </div>
 
       <div>
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" class="half-width">
           <input matInput [matDatepicker]="pickerExit" placeholder="Exit Date" formControlName="exitDate" >
           <mat-hint>Exit Date - Format(MM/DD/YYYY)</mat-hint>
           <mat-datepicker-toggle matIconSuffix [for]="pickerExit"></mat-datepicker-toggle>
@@ -62,7 +62,7 @@
         </mat-form-field>
       </div>
       <div class="margin-top-16">
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" class="half-width">
           <input matInput placeholder="Owner Name" formControlName="ownerName" >
           <mat-label>Parking Charge</mat-label>
         </mat-form-field>
