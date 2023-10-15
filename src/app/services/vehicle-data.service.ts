@@ -74,8 +74,18 @@ class Vehicle {
   _entryTime = '';
   _exitTime = '';
   _id = '';
+  _parkingCharge = '';
+
 
   constructor() {
+  }
+
+  get parkingCharge(): string {
+    return this._parkingCharge;
+  }
+
+  set parkingCharge(value: string) {
+    this._parkingCharge = value;
   }
 
 
@@ -134,6 +144,7 @@ export class VehicleDataService {
     v.exitDate = data.exitDate;
     v.entryTime = data.entryTime;
     v.exitTime = data.exitTime;
+    v.parkingCharge = data.parkingCharge;
     v.id = uuidv4();
     return v;
   }
