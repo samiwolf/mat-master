@@ -41,7 +41,7 @@ export class ChartsService {
 
   generateLineChartDataset(type = 'm')
   {
-    // Array.from({length: 40}, () => Math.floor(Math.random() * 40));
+
     let dataPoints = [];
     if(type === 'm')
     {

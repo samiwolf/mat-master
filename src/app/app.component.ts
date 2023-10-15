@@ -5,13 +5,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  // firebaseConfig = environment.firebase;
-  // constructor() {
-  //   this.initializeApp();
-  // }
-  //
-  // initializeApp() {
-  //   firebase.initializeApp(this.firebaseConfig);
-  // }
 
 }
