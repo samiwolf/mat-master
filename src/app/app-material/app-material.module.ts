@@ -22,6 +22,7 @@ import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {NgChartsModule} from "ng2-charts";
 import {MatGridListModule} from "@angular/material/grid-list";
+import {NgxMaterialTimepickerModule} from "ngx-material-timepicker";
 
 @NgModule({
   imports: [CdkDropList, CdkDrag],
@@ -48,7 +49,8 @@ import {MatGridListModule} from "@angular/material/grid-list";
     MatTableModule,
     MatPaginatorModule,
     NgChartsModule,
-    MatGridListModule
+    MatGridListModule,
+    NgxMaterialTimepickerModule
   ]
 })
 export class AppMaterialModule {}

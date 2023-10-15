@@ -29,6 +29,14 @@ export class DashboardComponent {
 
 
 
+  dataSource : any [] = [
+  {name: 'Cars',    count: 3},
+  {name: 'Truck',  count: 4},
+  {name: 'Microbus', count: 6},
+];
+
+  displayedColumns: string[] = ['name', 'count'];
+
 
   allVehicleInfo: any[] = [];
 
