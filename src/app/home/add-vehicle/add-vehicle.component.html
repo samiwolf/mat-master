@@ -1,7 +1,7 @@
 <div class="mp-16-16 vehicle-form">
 <div fxLayout="column" fxLayoutAlign="space-between center" class="">
   <div><h1>Enter Vehicle Information</h1></div>
-  <div>
+  <div class="spacer">
     <form (ngSubmit)="addOrUpdate()" name="loginForm" [formGroup]="vehicleForm">
       <div>
         <mat-form-field appearance="outline" class="half-width">
@@ -30,9 +30,11 @@
       </div>
       <div>
         <mat-form-field appearance="outline" class="half-width">
-          <input matInput placeholder="Owner Phone" formControlName="ownerPhone" >
+          <input matInput placeholder="Owner Phone" formControlName="ownerPhone" minlength="11" maxlength="11">
           <mat-label>Phone Number</mat-label>
           <mat-error *ngIf="vehicleForm.get('ownerPhone').errors?.['required']">Field is required</mat-error>
+          <mat-error *ngIf="vehicleForm.get('ownerPhone').errors?.['minLength'] || vehicleForm.get('ownerPhone').errors?.['maxLength']">
+            Phone Number must be 11 digit long</mat-error>
         </mat-form-field>
       </div>
       <div>

@@ -53,7 +53,7 @@ export class AddVehicleComponent implements OnInit{
           licenseNumber: new FormControl('', [Validators.required]),
           vehicleType: new FormControl('',[Validators.required]),
           ownerName: new FormControl('',[Validators.required]),
-          ownerPhone: new FormControl('',[Validators.required]),
+          ownerPhone: new FormControl('',[Validators.required, Validators.minLength(11), Validators.maxLength(11)]),
           entryStatus: new FormControl('',[Validators.required]),
           entryDate: new FormControl('',[Validators.required]),
           exitDate: new FormControl('',[Validators.required]),
