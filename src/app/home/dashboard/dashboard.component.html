@@ -1,11 +1,4 @@
-<!--<canvas baseChart-->
-<!--        [type]="'pie'"-->
-<!--        [datasets]="pieChartDatasets"-->
-<!--        [labels]="pieChartLabels"-->
-<!--        [options]="pieChartOptions"-->
-<!--        [plugins]="pieChartPlugins"-->
-<!--        [legend]="pieChartLegend">-->
-<!--</canvas>-->
+
 
 <div fxLayout="row" fxLayoutAlign="space-around start" >
   <form (ngSubmit)="filter()" name="loginForm" [formGroup]="dashboardForm">
@@ -30,3 +23,30 @@
   </div>
 
 </div>
+
+<div fxLayout="column" fxLayoutAlign="space-around center" >
+<div>
+  <canvas baseChart
+          [type]="'pie'"
+          [datasets]="pieChartDatasets"
+          [labels]="pieChartLabels"
+          [options]="pieChartOptions"
+          [plugins]="pieChartPlugins"
+          [legend]="pieChartLegend">
+  </canvas>
+</div>
+
+<div>
+  <div style="display: block;">
+    <canvas baseChart width="400" height="400"
+            [type]="'line'"
+            [data]="lineChartData"
+            [options]="lineChartOptions"
+            [legend]="lineChartLegend">
+    </canvas>
+  </div>
+
+</div>
+</div>
+
+
