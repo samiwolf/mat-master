@@ -2,7 +2,7 @@
   <div><h1>Dashboard</h1></div>
 </div>
 
-<div fxLayout="row" fxLayoutAlign="space-around start" class="margin-top-16">
+<div fxLayout="row" fxLayoutAlign="space-around center" class="margin-top-16">
 
   <form (ngSubmit)="filter()" name="loginForm" [formGroup]="dashboardForm">
   <div>
@@ -18,12 +18,13 @@
       <button mat-raised-button type="submit">Filter</button>
     </div>
   </form>
-  <div class="border-1-black">
-    <h3>Total Parked: {{totalParked}}</h3>
-  </div>
-  <div class="border-1-black">
-    <h3>Total Empty: {{totalSpot-totalParked}}</h3>
-  </div>
+<!--  <div class="border-1-black">-->
+<!--    <h3>: {{totalParked}}</h3>-->
+<!--  </div>-->
+<!--  <div class="border-1-black">-->
+<!--    <h3>Total Empty: {{totalSpot-totalParked}}</h3>-->
+<!--  </div>-->
+
   <div>
     <h3>Current parking status</h3>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -41,10 +42,31 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
   </div>
+  <div>
+    <table class="mat-table" >
+      <tr class="mat-header-row">
+        <th class="mat-header-cell">Total Parked</th>
+
+      </tr>
+      <tr class="mat-row">
+        <td class="mat-cell">{{totalParked}}</td>
+
+      </tr>
+    </table>
+    <table class="mat-table" >
+      <tr class="mat-header-row">
+        <th class="mat-header-cell">Empty Slots</th>
+
+      </tr>
+      <tr class="mat-row">
+        <td class="mat-cell">{{totalSpot-totalParked}}</td>
+      </tr>
+    </table>
+  </div>
 
 </div>
 
-<div fxLayout="column" fxLayoutAlign="space-around center" class="margin-top-16">
+<div fxLayout="row" fxLayoutAlign="space-around center" class="margin-top-16">
 <div>
   <canvas baseChart
           [type]="'pie'"
@@ -74,7 +96,7 @@
                 [type]="'line'"
                 [data]="lineChartDataMonthly"
                 [options]="lineChartOptions"
-                [legend]="lineChartLegend">
+               >
         </canvas>
       </div>
     </mat-tab>

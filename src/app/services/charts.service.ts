@@ -45,19 +45,19 @@ export class ChartsService {
     let dataPoints = [];
     if(type === 'm')
     {
-      dataPoints = Array.from({length: 12}, () => Math.floor(Math.random() * 40));
+      dataPoints = Array.from({length: 12}, () => Math.floor(Math.random() * 40 * 30));
     }
     else if(type === 'd')
     {
       dataPoints = Array.from({length: 30}, () => Math.floor(Math.random() * 40));
     }
     else{
-        dataPoints = Array.from({length: 5}, () => Math.floor(Math.random() * 40))
+        dataPoints = Array.from({length: 5}, () => Math.floor(Math.random() * 40 * 30 * 365))
     }
     return [
       {
         data: dataPoints,
-        label: 'Series A',
+        label: 'Total Vehicles',
         fill: true,
         tension: 0.5,
         borderColor: 'black',
