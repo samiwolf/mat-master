@@ -18,6 +18,8 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatDividerModule} from "@angular/material/divider";
 import {DatePipe} from "@angular/common";
 import {MatListModule} from "@angular/material/list";
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   imports: [CdkDropList, CdkDrag],
@@ -39,7 +41,10 @@ import {MatListModule} from "@angular/material/list";
     MatNativeDateModule,
     MatSidenavModule,
     MatListModule,
-    MatIconModule, MatDividerModule
+    MatIconModule,
+    MatDividerModule,
+    MatTableModule,
+    MatPaginatorModule
   ]
 })
 export class AppMaterialModule {}

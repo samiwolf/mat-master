@@ -31,7 +31,7 @@ export class AddVehicleComponent {
 
 
   listAllValues() {
-    this.vehicleDataService.addOrUpdate(this.vehicleForm.value);
+    this.vehicleDataService.add(this.vehicleForm.value);
     this.vehicleDataService.listAll();
   }
 }

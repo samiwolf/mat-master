@@ -1,7 +1,14 @@
 import { Injectable } from '@angular/core';
-
+const { v4: uuidv4 } = require('uuid');
 
 class Vehicle {
+  get id(): string {
+    return this._id;
+  }
+
+  set id(value: string) {
+    this._id = value;
+  }
   get licenseNumber(): string {
     return this._licenseNumber;
   }
@@ -64,6 +71,7 @@ class Vehicle {
   _entryStatus = '';
   _entryDate = '';
   _exitDate = '';
+  _id = '';
 
   constructor() {
   }
@@ -82,8 +90,9 @@ export class VehicleDataService {
 
   constructor() { }
 
-  addOrUpdate(data: any){
+  add(data: any){
     this.vehicles.push(this.generateVehicleFromData(data));
+    localStorage.setItem('vehicles', JSON.stringify(this.vehicles));
   }
 
    generateVehicleFromData(data: any) {
@@ -95,10 +104,16 @@ export class VehicleDataService {
     v.entryStatus = data.entryStatus;
     v.entryDate = data.entryDate;
     v.exitDate = data.exitDate;
+    v.id = uuidv4();
     return v;
   }
 
   listAll() {
     console.log(this.vehicles);
+    let lsValue = localStorage.getItem('vehicles');
+    if(lsValue){
+      this.vehicles = JSON.parse(lsValue) ;
+    }
+    return [...this.vehicles];
   }
 }
