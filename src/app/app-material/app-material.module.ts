@@ -20,6 +20,8 @@ import {DatePipe} from "@angular/common";
 import {MatListModule} from "@angular/material/list";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {NgChartsModule} from "ng2-charts";
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @NgModule({
   imports: [CdkDropList, CdkDrag],
@@ -44,7 +46,9 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     MatIconModule,
     MatDividerModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    NgChartsModule,
+    MatGridListModule
   ]
 })
 export class AppMaterialModule {}

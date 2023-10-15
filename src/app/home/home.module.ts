@@ -12,7 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [HomeComponent, AddVehicleComponent, ListVehiclesComponent, DashboardComponent],
-  exports: [HomeComponent, AddVehicleComponent, ListVehiclesComponent],
+  exports: [HomeComponent, AddVehicleComponent, ListVehiclesComponent,DashboardComponent],
     imports: [
         CommonModule,
         HomeRoutingModule,

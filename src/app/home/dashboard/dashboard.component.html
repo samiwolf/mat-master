@@ -1,1 +1,32 @@
-<p>dashboard works!</p>
+<!--<canvas baseChart-->
+<!--        [type]="'pie'"-->
+<!--        [datasets]="pieChartDatasets"-->
+<!--        [labels]="pieChartLabels"-->
+<!--        [options]="pieChartOptions"-->
+<!--        [plugins]="pieChartPlugins"-->
+<!--        [legend]="pieChartLegend">-->
+<!--</canvas>-->
+
+<div fxLayout="row" fxLayoutAlign="space-around start" >
+  <form (ngSubmit)="filter()" name="loginForm" [formGroup]="dashboardForm">
+  <div>
+    <mat-form-field appearance="outline">
+      <input matInput [matDatepicker]="picker" placeholder="Entry Date" formControlName="currentDate" >
+      <mat-hint>Entry Date - Format(MM/DD/YYYY)</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+    <div>
+      <button mat-raised-button type="submit">Filter</button>
+    </div>
+  </form>
+  <div class="border-2-black">
+    <h3>Total Parked: 5</h3>
+  </div>
+  <div class="border-2-black">
+    <h3>Total empty: 3</h3>
+  </div>
+
+</div>
