@@ -18,22 +18,32 @@ export class DashboardComponent {
   public pieChartDatasets = this.chartsService.generatePieChartDataset();
 
 
-  public lineChartData: ChartConfiguration<'line'>['data'] = {
-    labels: this.chartsService.generateLineChartLabels(),
-    datasets: this.chartsService.generateLineChartDataset()
+  public lineChartDataDaily: ChartConfiguration<'line'>['data'] = {
+    labels: this.chartsService.generateLineChartLabels('d'),
+    datasets: this.chartsService.generateLineChartDataset('d'),
   };
+
+  public lineChartDataMonthly: ChartConfiguration<'line'>['data'] = {
+    labels: this.chartsService.generateLineChartLabels('m'),
+    datasets: this.chartsService.generateLineChartDataset('m'),
+  };
+
+  public lineChartDataYearly: ChartConfiguration<'line'>['data'] = {
+    labels: this.chartsService.generateLineChartLabels('y'),
+    datasets: this.chartsService.generateLineChartDataset('y'),
+  };
+
   public lineChartOptions: ChartOptions<'line'> = {
     responsive: false
   };
   public lineChartLegend = true;
+  totalSpot = 100;
 
 
 
-  dataSource : any [] = [
-  {name: 'Cars',    count: 3},
-  {name: 'Truck',  count: 4},
-  {name: 'Microbus', count: 6},
-];
+  dataSource : any [] = this.chartsService.generateParkingData();
+
+  totalParked = this.dataSource.reduce((sum,item) => sum + item.count, 0);
 
   displayedColumns: string[] = ['name', 'count'];
 
@@ -50,17 +60,10 @@ export class DashboardComponent {
    this.allVehicleInfo = this.vehicleDataService.listAll()
   }
 
-
-
-
-
-
   dashboardForm : any;
 
-
   filter() {
-    console.log(
-      this.dashboardForm.value
-    );
+    this.dataSource = this.chartsService.generateParkingData();
+    this.totalParked = this.dataSource.reduce((sum,item) => sum + item.count, 0);
   }
 }

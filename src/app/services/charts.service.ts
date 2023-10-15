@@ -7,17 +7,31 @@ export class ChartsService {
 
   constructor() { }
 
-  generateLineChartLabels()
+  generateLineChartLabels(type = 'm')
   {
-    return [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July'
-    ];
+    if(type == 'm')
+    {
+      return [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+      ];
+    }
+    else if(type == 'd')
+    {
+      return Array.from({length: 30}, (_, i) => i + 1)
+    }
+    return Array.from({length: 5}, (_, i) => i + 2020)
+
   }
 
   generatePieChartLabels()
@@ -25,11 +39,24 @@ export class ChartsService {
     return  ['Car', 'Truck' , 'Microbus' ];
   }
 
-  generateLineChartDataset()
+  generateLineChartDataset(type = 'm')
   {
+    // Array.from({length: 40}, () => Math.floor(Math.random() * 40));
+    let dataPoints = [];
+    if(type === 'm')
+    {
+      dataPoints = Array.from({length: 12}, () => Math.floor(Math.random() * 40));
+    }
+    else if(type === 'd')
+    {
+      dataPoints = Array.from({length: 30}, () => Math.floor(Math.random() * 40));
+    }
+    else{
+        dataPoints = Array.from({length: 5}, () => Math.floor(Math.random() * 40))
+    }
     return [
       {
-        data: [ 65, 59, 80, 81, 56, 55, 40 ],
+        data: dataPoints,
         label: 'Series A',
         fill: true,
         tension: 0.5,
@@ -43,5 +70,14 @@ export class ChartsService {
     return [ {
       data: [ 300, 500, 100 ]
     } ];
+  }
+
+  generateParkingData()
+  {
+   return [
+      {name: 'Cars',    count: Math.floor(Math.random() * 20)},
+      {name: 'Truck',  count: Math.floor(Math.random() * 20)},
+      {name: 'Microbus', count: Math.floor(Math.random() * 20)},
+    ];
   }
 }
