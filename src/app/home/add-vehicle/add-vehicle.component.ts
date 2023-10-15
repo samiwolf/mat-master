@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import {VehicleDataService} from "../../services/vehicle-data.service";
 
 @Component({
   selector: 'app-add-vehicle',
@@ -8,30 +9,29 @@ import {Router} from "@angular/router";
   styleUrls: ['./add-vehicle.component.scss']
 })
 export class AddVehicleComponent {
-  loginForm : FormGroup;
-  hide=true;
+  vehicleForm : FormGroup;
+
   constructor(private router: Router,
-              private formBuilder: FormBuilder) {
-    this.loginForm = new FormGroup(
+              private formBuilder: FormBuilder,
+              private vehicleDataService: VehicleDataService) {
+
+    this.vehicleForm = new FormGroup(
       {
-        licenseNumber: new FormControl('',[Validators.required]),
-        vehicleType: new FormControl('',[Validators.required]),
-        ownerName: new FormControl('',[Validators.required]),
-        ownerPhone: new FormControl('',[Validators.required]),
-        entryStatus: new FormControl('',[Validators.required]),
-        entryDate: new FormControl('',[Validators.required]),
-        exitDate: new FormControl('',[Validators.required]),
+        licenseNumber: new FormControl('',),
+        vehicleType: new FormControl('',),
+        ownerName: new FormControl('',),
+        ownerPhone: new FormControl('',),
+        entryStatus: new FormControl('',),
+        entryDate: new FormControl('',),
+        exitDate: new FormControl('',),
       }
     );
 
   }
 
-  onLogin()
-  {
-    this.router.navigate(['question-builder']);
 
+  listAllValues() {
+    this.vehicleDataService.addOrUpdate(this.vehicleForm.value);
+    this.vehicleDataService.listAll();
   }
-
-
-
 }

@@ -14,6 +14,10 @@ import {CdkDrag, CdkDropList} from "@angular/cdk/drag-drop";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatDividerModule} from "@angular/material/divider";
+import {DatePipe} from "@angular/common";
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   imports: [CdkDropList, CdkDrag],
@@ -32,7 +36,10 @@ import {MatNativeDateModule} from "@angular/material/core";
     CdkDropList,
     ReactiveFormsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule, MatDividerModule
   ]
 })
 export class AppMaterialModule {}
