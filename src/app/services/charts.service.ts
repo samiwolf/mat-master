@@ -68,7 +68,7 @@ export class ChartsService {
 
   generatePieChartDataset() {
     return [ {
-      data: [ 300, 500, 100 ]
+      data: Array.from({length: 3}, () => Math.floor(Math.random() * 33))
     } ];
   }
 

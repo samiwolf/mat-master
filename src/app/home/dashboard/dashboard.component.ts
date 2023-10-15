@@ -65,5 +65,6 @@ export class DashboardComponent {
   filter() {
     this.dataSource = this.chartsService.generateParkingData();
     this.totalParked = this.dataSource.reduce((sum,item) => sum + item.count, 0);
+    this.pieChartDatasets = this.chartsService.generatePieChartDataset();
   }
 }

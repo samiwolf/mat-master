@@ -45,6 +45,13 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+  <mat-paginator [length]="100"
+                 [pageSize]="10"
+                 [pageSizeOptions]="[5, 10]"
+                 aria-label="Select page"
+                 (page)="paginate($event)"
+  >
+  </mat-paginator>
   <div  *ngIf="vehiclesList.length === 0"  class="centered">
     <h2>No vehicle info</h2>
   </div>
