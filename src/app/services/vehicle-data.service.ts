@@ -71,12 +71,29 @@ class Vehicle {
   _entryStatus = '';
   _entryDate = '';
   _exitDate = '';
+  _entryTime = '';
+  _exitTime = '';
   _id = '';
 
   constructor() {
   }
 
 
+  get entryTime(): string {
+    return this._entryTime;
+  }
+
+  set entryTime(value: string) {
+    this._entryTime = value;
+  }
+
+  get exitTime(): string {
+    return this._exitTime;
+  }
+
+  set exitTime(value: string) {
+    this._exitTime = value;
+  }
 }
 
 
@@ -115,6 +132,8 @@ export class VehicleDataService {
     v.entryStatus = data.entryStatus;
     v.entryDate = data.entryDate;
     v.exitDate = data.exitDate;
+    v.entryTime = data.entryTime;
+    v.exitTime = data.exitTime;
     v.id = uuidv4();
     return v;
   }

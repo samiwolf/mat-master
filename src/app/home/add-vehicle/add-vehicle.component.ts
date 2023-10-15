@@ -22,6 +22,7 @@ export class AddVehicleComponent implements OnInit{
 
 
   addOrUpdate() {
+    // console.log('this.vehicleForm.value',this.vehicleForm.value);
     if(this.editData)
     {
       this.vehicleDataService.update(this.vehicleForm.value);
@@ -47,6 +48,8 @@ export class AddVehicleComponent implements OnInit{
           entryStatus: new FormControl('',),
           entryDate: new FormControl('',),
           exitDate: new FormControl('',),
+          entryTime: new FormControl('',),
+          exitTime: new FormControl('',),
         }
       );
     }
@@ -60,6 +63,8 @@ export class AddVehicleComponent implements OnInit{
           entryStatus: new FormControl(this.editData._entryStatus),
           entryDate: new FormControl(this.editData._entryDate),
           exitDate: new FormControl(this.editData._exitDate),
+          entryTime: new FormControl(this.editData._entryTime),
+          exitTime: new FormControl(this.editData._exitTime),
         }
       );
     }

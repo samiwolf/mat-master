@@ -54,10 +54,32 @@
 
       <div>
         <mat-form-field appearance="outline" class="half-width">
+          <input matInput [ngxTimepicker]="timepicker" placeholder="Entry Time" formControlName="entryTime" >
+          <mat-hint>Entry Time - HH:MM</mat-hint>
+          <ngx-material-timepicker #timepicker></ngx-material-timepicker>
+<!--          <mat-datepicker-toggle matIconSuffix [for]="timepicker"></mat-datepicker-toggle>-->
+<!--          <mat-datepicker #timepicker></mat-datepicker>-->
+
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline" class="half-width">
           <input matInput [matDatepicker]="pickerExit" placeholder="Exit Date" formControlName="exitDate" >
           <mat-hint>Exit Date - Format(MM/DD/YYYY)</mat-hint>
           <mat-datepicker-toggle matIconSuffix [for]="pickerExit"></mat-datepicker-toggle>
           <mat-datepicker #pickerExit></mat-datepicker>
+
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline" class="half-width">
+          <input matInput [ngxTimepicker]="exittimepicker" placeholder="Exit Time" formControlName="exitTime" >
+          <mat-hint>Exit Time - HH:MM</mat-hint>
+          <ngx-material-timepicker #exittimepicker></ngx-material-timepicker>
+          <!--          <mat-datepicker-toggle matIconSuffix [for]="timepicker"></mat-datepicker-toggle>-->
+          <!--          <mat-datepicker #timepicker></mat-datepicker>-->
 
         </mat-form-field>
       </div>
