@@ -11,6 +11,9 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {FlexLayoutModule, FlexModule} from "@angular/flex-layout";
 import {CdkDrag, CdkDropList} from "@angular/cdk/drag-drop";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   imports: [CdkDropList, CdkDrag],
@@ -26,7 +29,10 @@ import {CdkDrag, CdkDropList} from "@angular/cdk/drag-drop";
     MatSelectModule,
     MatCheckboxModule,
     CdkDrag,
-    CdkDropList
+    CdkDropList,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class AppMaterialModule {}

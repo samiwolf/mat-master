@@ -1,0 +1,71 @@
+<div fxLayout="row" fxLayoutAlign="space-around center">
+  <div>
+    <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Input</mat-label>
+          <input matInput placeholder="Vehicle License Number" formControlName="licenseNumber" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Vehicle Type</mat-label>
+          <mat-select  formControlName="vehicleType">
+            <mat-option value="micro">Microbus</mat-option>
+            <mat-option value="car">Car</mat-option>
+            <mat-option value="truck">Truck</mat-option>
+          </mat-select>
+
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Owner Name" formControlName="ownerName" required>
+          <mat-label>Owner Name</mat-label>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Owner Phone" formControlName="ownerPhone" required>
+          <mat-label>Phone Number</mat-label>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Vehicle Status</mat-label>
+          <mat-select  formControlName="entryStatus">
+            <mat-option value="in">In</mat-option>
+            <mat-option value="out">Out</mat-option>
+          </mat-select>
+
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline">
+          <input matInput [matDatepicker]="picker" formControlName="entryDate" required>
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline">
+          <input matInput [matDatepicker]="pickerExit" formControlName="exitDate" required>
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="pickerExit"></mat-datepicker-toggle>
+          <mat-datepicker #pickerExit></mat-datepicker>
+
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Owner Name" formControlName="ownerName" required>
+          <mat-label>Parking Charge</mat-label>
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+</div>
