@@ -1,7 +1,7 @@
 <div class="center-center vehicle-form">
 <div fxLayout="column" fxLayoutAlign="space-between center" class="">
   <div>
-    <form (ngSubmit)="listAllValues()" name="loginForm" [formGroup]="vehicleForm">
+    <form (ngSubmit)="addOrUpdate()" name="loginForm" [formGroup]="vehicleForm">
       <div>
         <mat-form-field appearance="outline">
           <mat-label>License Number</mat-label>
@@ -67,8 +67,11 @@
           <mat-label>Parking Charge</mat-label>
         </mat-form-field>
       </div>
-      <div>
+      <div *ngIf="editData">
         <button mat-raised-button type="submit">Update</button>
+      </div>
+      <div *ngIf="!editData">
+        <button mat-raised-button type="submit">Add</button>
       </div>
     </form>
   </div>

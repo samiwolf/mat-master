@@ -95,6 +95,17 @@ export class VehicleDataService {
     localStorage.setItem('vehicles', JSON.stringify(this.vehicles));
   }
 
+  update(data: any){
+    let idx = this.vehicles.findIndex(value => value._id === data._id);
+    if(idx !== -1)
+    {
+      this.vehicles[idx] = this.generateVehicleFromData(data);
+    }
+    else {
+      this.vehicles.push( this.generateVehicleFromData(data));
+    }
+  }
+
    generateVehicleFromData(data: any) {
     let v = new Vehicle();
     v.licenseNumber = data.licenseNumber;

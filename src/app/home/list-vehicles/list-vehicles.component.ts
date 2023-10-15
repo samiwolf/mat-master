@@ -11,11 +11,26 @@ import {VehicleDataService} from "../../services/vehicle-data.service";
 export class ListVehiclesComponent {
   vehiclesList: any[] = [];
   displayedColumns: string[] = ['_ownerName', '_vehicleType', '_licenseNumber', '_entryDate', '_exitDate', '_entryStatus', 'actions'];
+  editing = false;
+  editingData = null;
   constructor(private router: Router,
               private formBuilder: FormBuilder,
               private vehicleDataService: VehicleDataService) {
               this.vehiclesList = this.vehicleDataService.listAll();
-    console.log(this.vehiclesList)
   }
 
+  update(_id: string) {
+    // console.log(this.vehiclesList.find(value => value._id === _id));
+   this.editingData =  this.vehiclesList.find(value => value._id === _id);
+   this.editing = true;
+
+  }
+
+  updateComplete($event: string) {
+    if($event === 'done')
+    {
+      this.editingData = null;
+      this.editing = false;
+    }
+  }
 }
